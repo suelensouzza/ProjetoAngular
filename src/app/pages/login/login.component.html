@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <title>Login - Ford</title>
+</head>
+<body>
+  <div class="container">
+    <div class="principal">
+      <img src="img/ranger.png" alt="Carro Ford" />
+    </div>
+
+    <div class="loginTotal">
+      <img src="img/ford.png" alt="Logo Ford" class="logo" />
+      <h2 class="bemVindo">Boas-vindas</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        
+        <div class="form">
+          <i class="fas fa-user"></i>
+          <input type="text" formControlName="nome" placeholder="Digite seu nome de usuário" required />
+        </div>
+
+        <div class="form">
+          <i class="fas fa-lock"></i>
+          <input type="password" formControlName="senha" placeholder="Digite sua senha" required />
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="loginAutomatico" />
+          <label for="loginAutomatico">Logar automaticamente</label>
+        </div>
+
+    
+        <button type="submit" routerLink="/home">Entrar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<form [formGroup]="selectCarForms"> 
+  <header class="dashboard-header">
+    <img src="img/ford.png" alt="Logo Ford" class="logo" />
+    <h1>Dashboard FORD</h1>
+  </header>
+
+  <main class="dashboard-container">
+    <div class="dados">
+      <div class="box">
+        <p>Veículo</p>
+        <select formControlName="carId" id="select-veiculo">
+          <option value="">Selecione</option>
+          <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
+            {{ vehicle.vehicle }}
+          </option>
+        </select>
+      </div>
+
+      <div class="box">
+        <p>Total de Vendas</p>
+        <h3>{{ selectedVehicle?.volumetotal || '-' }}</h3>
+      </div>
+
+      <!-- Novo card de Conectados -->
+      <div class="box">
+        <p>Conectados</p>
+        <h3>{{ selectedVehicle?.connected || '-' }}</h3>
+      </div>
+
+      <div class="box">
+        <p>Update Software</p>
+        <h3>{{ selectedVehicle?.softwareUpdates || '-' }}</h3>
+      </div>
+    </div>
+
+    <div class="carro-img" *ngIf="selectedVehicle">
+      <img [src]="selectedVehicle.img" [alt]="selectedVehicle.vehicle" />
+    </div>
+
+    <div class="tabela-dados" *ngIf="selectedVehicle">
+      <table>
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Veículo</th>
+            <th>Nível de Combustível</th>
+            <th>Status</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PRD{{ selectedVehicle.id }}XYZ</td>
+            <td>{{ selectedVehicle.vehicle }}</td>
+            <td>{{ (selectedVehicle.volumetotal % 100) + '%' }}</td>
+            <td>{{ selectedVehicle.connected > 1000 ? 'Ativo' : 'Em revisão' }}</td>
+            <td>{{ today }}</td>
+          </tr>
+          <tr>
+            <td>PRD{{ selectedVehicle.id }}ABC</td>
+            <td>{{ selectedVehicle.vehicle }}</td>
+            <td>{{ (selectedVehicle.softwareUpdates % 100) + '%' }}</td>
+            <td>{{ selectedVehicle.connected > 500 ? 'Ativo' : 'Off-line' }}</td>
+            <td>{{ today }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</form>

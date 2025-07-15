@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #f9f9f9;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.principal, .loginTotal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal {
+  background-color: #fff;
+}
+
+.principal img {
+  width: 80%;
+  max-width: 600px;
+}
+
+.loginTotal {
+  flex-direction: column;
+  background-color: #fff;
+  padding: 40px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.bemVindo {
+  color: green;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  background: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 350px;
+}
+
+.form i {
+  margin-right: 10px;
+  color: #0a8c48;
+  font-size: 16px;
+}
+
+.form input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+}
